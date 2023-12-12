@@ -8,7 +8,7 @@
       <link href="/posts/7a6a6b5a.html"/>
       <url>/posts/7a6a6b5a.html</url>
       
-        <content type="html"><![CDATA[<h1 id="测试文章"><a href="#测试文章" class="headerlink" title="测试文章"></a>测试文章</h1><p>这是一个用于测试的 Markdown 示例文章。</p><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>这是一个普通的段落，包含了一些文本。Markdown 是一种轻量级的标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p><h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>这是一个链接：<a href="https://www.openai.com/">OpenAI</a></p><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>无序列表：</p><ul><li>项目一</li><li>项目二</li><li>项目三</li></ul><p>有序列表：</p><ol><li>第一项</li><li>第二项</li><li>第三项</li></ol><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>这是一个图片示例：</p><p><img src="https://via.placeholder.com/150" alt="示例图片"></p><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><pre><code class="python"># Python 示例代码def hello_world():    print(&quot;Hello, World!&quot;)hello_world()</code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="测试文章"><a href="#测试文章" class="headerlink" title="测试文章"></a>测试文章</h1><p>这是一个用于测试的 Markdown 示例文章。</p><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>这是一个普通的段落，包含了一些文本。Markdown 是一种轻量级的标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p><h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>这是一个链接：<a href="https://www.openai.com/">OpenAI</a></p><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>无序列表：</p><ul><li>项目一</li><li>项目二</li><li>项目三</li></ul><p>有序列表：</p><ol><li>第一项</li><li>第二项</li><li>第三项</li></ol><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>这是一个图片示例：</p><p><img src="https://via.placeholder.com/150" alt="示例图片"></p><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>```python</p><h1 id="Python-示例代码"><a href="#Python-示例代码" class="headerlink" title="Python 示例代码"></a>Python 示例代码</h1><p>def hello_world():<br>    print(“Hello, World!”)</p><p>hello_world()</p>]]></content>
       
       
       
@@ -46,6 +46,17 @@
       <url>/manifest.json</url>
       
         <content type="html"><![CDATA[{"name":"安知鱼`Blog","short_name":"安知鱼","theme_color":"#3b70fc","background_color":"#3b70fc","display":"standalone","scope":"/","start_url":"/","icons":[{"src":"/img/siteicon/16.png","sizes":"16x16","type":"image/png"},{"src":"/img/siteicon/32.png","sizes":"32x32","type":"image/png"},{"src":"/img/siteicon/48.png","sizes":"48x48","type":"image/png"},{"src":"/img/siteicon/64.png","sizes":"64x64","type":"image/png"},{"src":"/img/siteicon/128.png","sizes":"128x128","type":"image/png"},{"src":"/img/siteicon/144.png","sizes":"144x144","type":"image/png"},{"src":"/img/siteicon/512.png","sizes":"512x512","type":"image/png"}],"splash_pages":null}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/ali_font.js"/>
+      <url>/js/ali_font.js</url>
+      
+        <content type="html"><![CDATA[window._iconfont_svg_string_4370598='<svg><symbol id="icon-emizhifeiji" viewBox="0 0 1171 1024"><path d="M502.237757 1024 644.426501 829.679301 502.237757 788.716444 502.237757 1024 502.237757 1024ZM0 566.713817 403.967637 689.088066 901.485385 266.66003 515.916344 721.68034 947.825442 855.099648 1170.285714 0 0 566.713817 0 566.713817Z" fill="#000000" ></path></symbol></svg>',function(n){var e=(e=document.getElementsByTagName("script"))[e.length-1],t=e.getAttribute("data-injectcss"),e=e.getAttribute("data-disable-injectsvg");if(!e){var i,o,d,c,s,a=function(e,t){t.parentNode.insertBefore(e,t)};if(t&&!n.__iconfont__svg__cssinject__){n.__iconfont__svg__cssinject__=!0;try{document.write("<style>.svgfont {display: inline-block;width: 1em;height: 1em;fill: currentColor;vertical-align: -0.1em;font-size:16px;}</style>")}catch(e){console&&console.log(e)}}i=function(){var e,t=document.createElement("div");t.innerHTML=n._iconfont_svg_string_4370598,(t=t.getElementsByTagName("svg")[0])&&(t.setAttribute("aria-hidden","true"),t.style.position="absolute",t.style.width=0,t.style.height=0,t.style.overflow="hidden",t=t,(e=document.body).firstChild?a(t,e.firstChild):e.appendChild(t))},document.addEventListener?~["complete","loaded","interactive"].indexOf(document.readyState)?setTimeout(i,0):(o=function(){document.removeEventListener("DOMContentLoaded",o,!1),i()},document.addEventListener("DOMContentLoaded",o,!1)):document.attachEvent&&(d=i,c=n.document,s=!1,r(),c.onreadystatechange=function(){"complete"==c.readyState&&(c.onreadystatechange=null,l())})}function l(){s||(s=!0,d())}function r(){try{c.documentElement.doScroll("left")}catch(e){return void setTimeout(r,50)}l()}}(window);]]></content>
       
     </entry>
     
