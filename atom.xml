@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-12T05:53:16.638Z</updated>
+  <updated>2023-12-12T15:08:10.123Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试文章</title>
+    <link href="http://example.com/posts/7a6a6b5a.html"/>
+    <id>http://example.com/posts/7a6a6b5a.html</id>
+    <published>2023-12-11T16:00:00.000Z</published>
+    <updated>2023-12-12T15:08:10.123Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="测试文章"><a href="#测试文章" class="headerlink" title="测试文章"></a>测试文章</h1><p>这是一个用于测试的 Markdown 示例文章。</p><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>这是一个普通的段落，包含了一些文本。Markdown 是一种轻量级的标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p><h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>这是一个链接：<a href="https://www.openai.com/">OpenAI</a></p><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>无序列表：</p><ul><li>项目一</li><li>项目二</li><li>项目三</li></ul><p>有序列表：</p><ol><li>第一项</li><li>第二项</li><li>第三项</li></ol><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>这是一个图片示例：</p><p><img src="https://via.placeholder.com/150" alt="示例图片"></p><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><pre><code class="python"># Python 示例代码def hello_world():    print(&quot;Hello, World!&quot;)hello_world()</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;测试文章&quot;&gt;&lt;a href=&quot;#测试文章&quot; class=&quot;headerlink&quot; title=&quot;测试文章&quot;&gt;&lt;/a&gt;测试文章&lt;/h1&gt;&lt;p&gt;这是一个用于测试的 Markdown 示例文章。&lt;/p&gt;
+&lt;h2 id=&quot;段落&quot;&gt;&lt;a href=&quot;#段落&quot; class=&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="测试" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
