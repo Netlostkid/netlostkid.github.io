@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>v2rayN相关的常见问题和答案 | Netlostkid'Blog</title><meta name="author" content="Netlostkid"><meta name="copyright" content="Netlostkid"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="常见问题反馈问题时，开发者需要的日志从哪里找到？反馈问题时应该在重现之前，先把原来的日志删除，重现后再把详细步骤和日志提交。 问题分为 v2rayN 问题 和 核心问题两种，所以日志也对应的有两种：  v2rayN 问题：比如界面操作，设置，测速，检查更新等，日志存放在 guiLogs 文件夹。 核心问题：日志显示在主界面信息栏中，可以复制出来。  支持开启多个代理服务吗？可以。发布中zip格式包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="v2rayN相关的常见问题和答案">
+<meta property="og:url" content="http://example.com/2025/04/10/v2rayN%E7%9B%B8%E5%85%B3%E7%9A%84Q&A/index.html">
+<meta property="og:site_name" content="Netlostkid&#39;Blog">
+<meta property="og:description" content="常见问题反馈问题时，开发者需要的日志从哪里找到？反馈问题时应该在重现之前，先把原来的日志删除，重现后再把详细步骤和日志提交。 问题分为 v2rayN 问题 和 核心问题两种，所以日志也对应的有两种：  v2rayN 问题：比如界面操作，设置，测速，检查更新等，日志存放在 guiLogs 文件夹。 核心问题：日志显示在主界面信息栏中，可以复制出来。  支持开启多个代理服务吗？可以。发布中zip格式包">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2024/01/21/mjW9zTn58vsUtIi.png">
+<meta property="article:published_time" content="2025-04-10T06:11:12.000Z">
+<meta property="article:modified_time" content="2025-04-11T06:43:48.245Z">
+<meta property="article:author" content="Netlostkid">
+<meta property="article:tag" content="proxy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2024/01/21/mjW9zTn58vsUtIi.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2025/04/10/v2rayN%E7%9B%B8%E5%85%B3%E7%9A%84Q&amp;A/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'medium_zoom',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'v2rayN相关的常见问题和答案',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-04-11 14:43:48'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://s2.loli.net/2024/01/21/mjW9zTn58vsUtIi.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Netlostkid'Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">v2rayN相关的常见问题和答案</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">v2rayN相关的常见问题和答案</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-04-10T06:11:12.000Z" title="发表于 2025-04-10 14:11:12">2025-04-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-11T06:43:48.245Z" title="更新于 2025-04-11 14:43:48">2025-04-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/categories/">categories</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="反馈问题时，开发者需要的日志从哪里找到？"><a href="#反馈问题时，开发者需要的日志从哪里找到？" class="headerlink" title="反馈问题时，开发者需要的日志从哪里找到？"></a>反馈问题时，开发者需要的日志从哪里找到？</h3><p>反馈问题时应该在重现之前，先把原来的日志删除，重现后再把详细步骤和日志提交。 问题分为 v2rayN 问题 和 核心问题两种，所以日志也对应的有两种：</p>
+<ol>
+<li>v2rayN 问题：比如界面操作，设置，测速，检查更新等，日志存放在 guiLogs 文件夹。</li>
+<li>核心问题：日志显示在主界面信息栏中，可以复制出来。</li>
+</ol>
+<h3 id="支持开启多个代理服务吗？"><a href="#支持开启多个代理服务吗？" class="headerlink" title="支持开启多个代理服务吗？"></a>支持开启多个代理服务吗？</h3><p>可以。发布中<code>zip</code>格式包为便携版，解压缩到文件夹后直接可以运行，存储文件位置为本文件夹；你可以复制多份拷贝后，并修改本地监听端口，同时运行后就可以开启多个代理服务。</p>
+<h3 id="在-32位操作系统下能使用吗？"><a href="#在-32位操作系统下能使用吗？" class="headerlink" title="在 32位操作系统下能使用吗？"></a>在 32位操作系统下能使用吗？</h3><p>理论上可以。但是从开发到测试都没有在 32 位操作系统下验证过，并且你需要自己编译。</p>
+<h3 id="在-Windows-7-Win7-下能使用吗？"><a href="#在-Windows-7-Win7-下能使用吗？" class="headerlink" title="在 Windows 7 &#x2F; Win7 下能使用吗？"></a>在 Windows 7 &#x2F; Win7 下能使用吗？</h3><p>理论上可以。v2rayN 依赖 .NET 8 ，请看微软官方文档 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/core/install/windows">https://learn.microsoft.com/zh-cn/dotnet/core/install/windows</a><br>相关的 issue 挺多的，搜索 <a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/issues?q=win7">https://github.com/2dust/v2rayN/issues?q=win7</a><br>因为 Golang 最新版本已经停止了支持 Win7 ，所以各个核心对 Win7 给出了特殊版本，需要你手动下载后放入 bin 文件夹中</p>
+<ol>
+<li>Xray : 下载文件中包含有 win7 的包</li>
+<li>sing-box : 下载文件中包含有 Windows legacy 的包</li>
+<li>mihomo : 下载文件中包含有 Windows go120 的包</li>
+</ol>
+<h3 id="为什么-Windows-自动配置系统代理模式下系统代理中只有HTTP代理而没有SOCKS代理"><a href="#为什么-Windows-自动配置系统代理模式下系统代理中只有HTTP代理而没有SOCKS代理" class="headerlink" title="为什么 Windows 自动配置系统代理模式下系统代理中只有HTTP代理而没有SOCKS代理"></a>为什么 Windows 自动配置系统代理模式下系统代理中只有HTTP代理而没有SOCKS代理</h3><p>Windows 的系统代理正常只能配置HTTP代理，不支持SOCKS5代理但是支持SOCKS4代理。<br>参考讨论区： <a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/discussions/1553">https://github.com/2dust/v2rayN/discussions/1553</a></p>
+<h3 id="在-macOS-系统上运行，开启自动配置系统代理，无法自动添加网络设置内的代理地址"><a href="#在-macOS-系统上运行，开启自动配置系统代理，无法自动添加网络设置内的代理地址" class="headerlink" title="在 macOS 系统上运行，开启自动配置系统代理，无法自动添加网络设置内的代理地址"></a>在 macOS 系统上运行，开启自动配置系统代理，无法自动添加网络设置内的代理地址</h3><p>v2rayN macOS 版本开启自动配置系统代理实际上是调用脚本实现的，所以可能是在你的设备环境下调用失败了，你可以查看日志来判断。脚本执行失败的日志可以在 guiLogs 文件夹中找。<br>解决办法可能需要你自己写个脚本来实现，参考 issue <a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/issues/6462">https://github.com/2dust/v2rayN/issues/6462</a></p>
+<h3 id="电脑翻墙后能否共享热点给其他设备"><a href="#电脑翻墙后能否共享热点给其他设备" class="headerlink" title="电脑翻墙后能否共享热点给其他设备"></a>电脑翻墙后能否共享热点给其他设备</h3><p>可以。在设置中开启允许来自局域网的连接，核对好端口号，设置好系统防火墙入站，然后在同局域网的其他设备上设置好代理参数。</p>
+<h3 id="怎么手动添加让steam下载走直连"><a href="#怎么手动添加让steam下载走直连" class="headerlink" title="怎么手动添加让steam下载走直连"></a>怎么手动添加让steam下载走直连</h3><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/issues/1361">https://github.com/2dust/v2rayN/issues/1361</a></p>
+<h3 id="使用v2rayN的一些体会供参考和利用debug日志自查自纠"><a href="#使用v2rayN的一些体会供参考和利用debug日志自查自纠" class="headerlink" title="使用v2rayN的一些体会供参考和利用debug日志自查自纠"></a>使用v2rayN的一些体会供参考和利用debug日志自查自纠</h3><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/discussions/5287">https://github.com/2dust/v2rayN/discussions/5287</a></p>
+<h3 id="PAC-模式和自动配置系统代理有什么区别？"><a href="#PAC-模式和自动配置系统代理有什么区别？" class="headerlink" title="PAC 模式和自动配置系统代理有什么区别？"></a>PAC 模式和自动配置系统代理有什么区别？</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/wiki/Description-of-system-proxy-routing">系统代理和路由说明</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/discussions/3240">https://github.com/2dust/v2rayN/discussions/3240</a></li>
+</ul>
+<h3 id="对DNS配置的增强的讨论"><a href="#对DNS配置的增强的讨论" class="headerlink" title="对DNS配置的增强的讨论"></a>对DNS配置的增强的讨论</h3><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/discussions/6457">https://github.com/2dust/v2rayN/discussions/6457</a></p>
+<h3 id="为什么我在开启v2ray之后无法使用bing搜索"><a href="#为什么我在开启v2ray之后无法使用bing搜索" class="headerlink" title="为什么我在开启v2ray之后无法使用bing搜索"></a>为什么我在开启v2ray之后无法使用bing搜索</h3><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/discussions/3489">https://github.com/2dust/v2rayN/discussions/3489</a></p>
+<h3 id="点击“解除win10-UWP应用回环代理限制”出错"><a href="#点击“解除win10-UWP应用回环代理限制”出错" class="headerlink" title="点击“解除win10 UWP应用回环代理限制”出错"></a>点击“解除win10 UWP应用回环代理限制”出错</h3><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/discussions/6097">https://github.com/2dust/v2rayN/discussions/6097</a></p>
+<h3 id="关于更新-Windows-WIN11-24H2-后代理失效的问题解决"><a href="#关于更新-Windows-WIN11-24H2-后代理失效的问题解决" class="headerlink" title="关于更新 Windows WIN11 24H2 后代理失效的问题解决"></a>关于更新 Windows WIN11 24H2 后代理失效的问题解决</h3><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/discussions/5795">https://github.com/2dust/v2rayN/discussions/5795</a></p>
+<h3 id="启用TUN模式问题的统一回复"><a href="#启用TUN模式问题的统一回复" class="headerlink" title="启用TUN模式问题的统一回复"></a>启用TUN模式问题的统一回复</h3><p>TUN模式问题很复杂，直接看 issue 和 discussion</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/issues/4539">https://github.com/2dust/v2rayN/issues/4539</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/discussions/3888">https://github.com/2dust/v2rayN/discussions/3888</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/discussions/5828">https://github.com/2dust/v2rayN/discussions/5828</a></li>
+</ul>
+<h3 id="在测试真连接时会显示运行-core-失败"><a href="#在测试真连接时会显示运行-core-失败" class="headerlink" title="在测试真连接时会显示运行 core 失败"></a>在测试真连接时会显示运行 core 失败</h3><p>信息框中显示运行 core 失败，一般是在延迟测试和测速中出现，有时候也会在启动活动配置文件出现。请把日志等级设置为 Debug ，然后把运行 core 失败时界面上显示的日志发出来。 提示内容大部分是因为配置错误或你的配置 Core 已经不支持了；或者就是本地监听端口已被其他应用占用，比如虚拟机。<br>相关的 issue 挺多的，搜索 <a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/issues?q=Hyper">https://github.com/2dust/v2rayN/issues?q=Hyper</a> 如果自己解决不了，请统一反馈到 <a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/issues/6428">https://github.com/2dust/v2rayN/issues/6428</a></p>
+<h3 id="能代理游戏-或-加速游戏吗？"><a href="#能代理游戏-或-加速游戏吗？" class="headerlink" title="能代理游戏 或 加速游戏吗？"></a>能代理游戏 或 加速游戏吗？</h3><p>能代理游戏，但是不能加速游戏，并且可能需要你折腾路由等。建议购买专业游戏加速器使用。</p>
+<h3 id="托盘区显示的图标能自己改吗？"><a href="#托盘区显示的图标能自己改吗？" class="headerlink" title="托盘区显示的图标能自己改吗？"></a>托盘区显示的图标能自己改吗？</h3><p>可以。在存储文件夹下，放入图标文件 NotifyIcon1.ico 到 NotifyIcon4.ico，就可以自定义托盘图标。会随着系统代理改变而改变。</p>
+<h3 id="在不关闭系统代理的情况下直接关机，重启系统后在不运行-v2rayN-时，系统代理是什么状态？"><a href="#在不关闭系统代理的情况下直接关机，重启系统后在不运行-v2rayN-时，系统代理是什么状态？" class="headerlink" title="在不关闭系统代理的情况下直接关机，重启系统后在不运行 v2rayN 时，系统代理是什么状态？"></a>在不关闭系统代理的情况下直接关机，重启系统后在不运行 v2rayN 时，系统代理是什么状态？</h3><p>这种情况系统代理大概率是关闭的。因为 v2rayN 会接收系统的关机事件，然后会关闭系统代理。但是并不是一定会执行成功，因为系统可能等不到 v2rayN 执行完自己的事件就已经关机完成了。结论就是系统代理不一定是关闭的。</p>
+<h3 id="文件夹或路径中是否可以使用中文和空格等吗？"><a href="#文件夹或路径中是否可以使用中文和空格等吗？" class="headerlink" title="文件夹或路径中是否可以使用中文和空格等吗？"></a>文件夹或路径中是否可以使用中文和空格等吗？</h3><p>理论上是可以的。但是为了防止一些异常，还是尽量只用纯英文字符并移除空格等特殊字符。还有尽量不要放入有权限限制的目录中，比如 Windows 系统的 C 盘。</p>
+<h3 id="打开360-火绒等杀毒软件后，v2rayN不能代理我的流量，导致我不能翻墙怎么办？"><a href="#打开360-火绒等杀毒软件后，v2rayN不能代理我的流量，导致我不能翻墙怎么办？" class="headerlink" title="打开360 火绒等杀毒软件后，v2rayN不能代理我的流量，导致我不能翻墙怎么办？"></a>打开360 火绒等杀毒软件后，v2rayN不能代理我的流量，导致我不能翻墙怎么办？</h3><h4 id="省时省力"><a href="#省时省力" class="headerlink" title="省时省力:"></a>省时省力:</h4><blockquote>
+<p>使用专业卸载软件<a target="_blank" rel="noopener" href="https://geekuninstaller.com/download">geek</a>，彻底卸载所有杀毒软件，geek不仅能删除软件下载目录，还能顺便清理注册表信息</p>
+<p>geek软件的使用教程，请自行询问Google老师~</p>
+</blockquote>
+<h4 id="如果不嫌麻烦的话，可以采取一下措施："><a href="#如果不嫌麻烦的话，可以采取一下措施：" class="headerlink" title="如果不嫌麻烦的话，可以采取一下措施："></a>如果不嫌麻烦的话，可以采取一下措施：</h4><h5 id="1-添加v2rayN到杀毒软件的白名单"><a href="#1-添加v2rayN到杀毒软件的白名单" class="headerlink" title="1. 添加v2rayN到杀毒软件的白名单"></a>1. <strong>添加v2rayN到杀毒软件的白名单</strong></h5><ul>
+<li>许多杀毒软件会误报v2rayN为潜在威胁，导致其功能受到限制。可以将v2rayN及其相关文件（如<code>v2rayN.exe</code>、<code>v2ray.exe</code>等）添加到杀毒软件的白名单或信任列表中。</li>
+<li>具体操作方式：<ul>
+<li><strong>360安全卫士</strong>：进入360的安全设置，找到“隔离区”或“防护设置”，将v2rayN程序添加到白名单中。</li>
+<li><strong>火绒</strong>：打开火绒杀毒软件，进入“防护设置”或“实时防护”，在“白名单管理”中添加v2rayN相关程序。</li>
+</ul>
+</li>
+</ul>
+<h5 id="2-禁用防火墙或相关网络监控功能"><a href="#2-禁用防火墙或相关网络监控功能" class="headerlink" title="2. 禁用防火墙或相关网络监控功能"></a>2. <strong>禁用防火墙或相关网络监控功能</strong></h5><ul>
+<li>杀毒软件有时会启用内置防火墙或网络监控功能，阻止v2rayN的网络连接。可以尝试暂时禁用这些功能，看看是否能恢复代理功能。<ul>
+<li><strong>360安全卫士</strong>：在360的防火墙设置中，关闭网络防火墙或调整网络访问权限。</li>
+<li><strong>火绒</strong>：禁用“网络防护”或“流量监控”等功能，检查是否能恢复连接。</li>
+</ul>
+</li>
+</ul>
+<h5 id="3-修改v2rayN代理设置"><a href="#3-修改v2rayN代理设置" class="headerlink" title="3. 修改v2rayN代理设置"></a>3. <strong>修改v2rayN代理设置</strong></h5><ul>
+<li>检查v2rayN的代理设置，确保配置正确。可以尝试以下步骤：<ul>
+<li>打开v2rayN，检查配置的服务器地址、端口、UUID等是否正确。</li>
+<li>尝试切换不同的代理协议（例如从Vmess切换到Vless或从WebSocket切换到普通TCP等），以便绕过某些网络监控限制。</li>
+</ul>
+</li>
+</ul>
+<h5 id="4-关闭杀毒软件的实时保护"><a href="#4-关闭杀毒软件的实时保护" class="headerlink" title="4. 关闭杀毒软件的实时保护"></a>4. <strong>关闭杀毒软件的实时保护</strong></h5><ul>
+<li>如果你确认v2rayN没有安全问题，可以暂时关闭杀毒软件的实时保护或病毒扫描功能，这样就不会阻止v2rayN的正常运行。<ul>
+<li><strong>360</strong>：右键点击360图标，选择“暂停保护”或“退出360”，然后再试试v2rayN。</li>
+<li><strong>火绒</strong>：右键点击火绒图标，选择“暂停防护”或禁用实时防护，再尝试使用v2rayN。</li>
+</ul>
+</li>
+</ul>
+<h5 id="5-重置网络设置"><a href="#5-重置网络设置" class="headerlink" title="5. 重置网络设置"></a>5. <strong>重置网络设置</strong></h5><ul>
+<li><p>有时杀毒软件的防火墙或代理设置可能会影响系统的网络配置，可以尝试重置网络设置。</p>
+<ul>
+<li><p>打开命令提示符（以管理员身份），输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netsh winsock reset</span><br><span class="line">netsh int ip reset</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启计算机后再试。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="6-尝试使用VPN或其他代理工具"><a href="#6-尝试使用VPN或其他代理工具" class="headerlink" title="6. 尝试使用VPN或其他代理工具"></a>6. <strong>尝试使用VPN或其他代理工具</strong></h5><ul>
+<li>如果以上方法都不起作用，可以尝试使用其他VPN工具或代理软件，如Shadowsocks等，来替代v2rayN，看看是否能解决流量代理问题。</li>
+</ul>
+<h5 id="7-卸载或暂时禁用杀毒软件"><a href="#7-卸载或暂时禁用杀毒软件" class="headerlink" title="7. 卸载或暂时禁用杀毒软件"></a>7. <strong>卸载或暂时禁用杀毒软件</strong></h5><ul>
+<li>如果v2rayN无法在当前的杀毒软件环境中正常运行，可以尝试卸载或者临时禁用该杀毒软件，使用其他轻量级的安全工具，避免对网络连接造成过多干扰。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Netlostkid</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/04/10/v2rayN%E7%9B%B8%E5%85%B3%E7%9A%84Q&amp;A/">http://example.com/2025/04/10/v2rayN%E7%9B%B8%E5%85%B3%E7%9A%84Q&amp;A/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">Netlostkid'Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/proxy/">proxy</a></div><div class="post-share"><div class="social-share" data-image="https://s2.loli.net/2024/01/21/mjW9zTn58vsUtIi.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/04/09/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" title="如何配置和使用代理？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">如何配置和使用代理？</div></div><div class="info-2"><div class="info-item-1">代理节点 全选复制proxy_node_for_teacher.txt文件中的代理节点  代理软件：v2rayN 下载及入门使用教程v2rayN 是 v2ray 系列客户端专为 Windows 电脑设计的图形化操作应用软件，具备强大功能并支持多种代理协议，包括VMess、VLESS、Trojan、Socks、Shadowsocks等，快速实现代理上网的功能。 下载v2rayN 官网下载地址:https://github.com/2dust/v2rayN/releases 因软件源代码托管于 Github ， 下载速度感人(0.1kb&#x2F;s)😅 安装包选择 在下载安装包栏中有很多 zip 压缩包选择，我们推荐第一次安装的用户下载 v2rayN-With-Core.7z 压缩包。安装时会自动提示安装[Microsoft .NET 6.0 Desktop Runtime]。  v2rayN-With-Core.zip...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/04/09/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" title="如何配置和使用代理？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-09</div><div class="info-item-2">如何配置和使用代理？</div></div><div class="info-2"><div class="info-item-1">代理节点 全选复制proxy_node_for_teacher.txt文件中的代理节点  代理软件：v2rayN 下载及入门使用教程v2rayN 是 v2ray 系列客户端专为 Windows 电脑设计的图形化操作应用软件，具备强大功能并支持多种代理协议，包括VMess、VLESS、Trojan、Socks、Shadowsocks等，快速实现代理上网的功能。 下载v2rayN 官网下载地址:https://github.com/2dust/v2rayN/releases 因软件源代码托管于 Github ， 下载速度感人(0.1kb&#x2F;s)😅 安装包选择 在下载安装包栏中有很多 zip 压缩包选择，我们推荐第一次安装的用户下载 v2rayN-With-Core.7z 压缩包。安装时会自动提示安装[Microsoft .NET 6.0 Desktop Runtime]。  v2rayN-With-Core.zip...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://s2.loli.net/2024/01/21/mjW9zTn58vsUtIi.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Netlostkid</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E9%A6%88%E9%97%AE%E9%A2%98%E6%97%B6%EF%BC%8C%E5%BC%80%E5%8F%91%E8%80%85%E9%9C%80%E8%A6%81%E7%9A%84%E6%97%A5%E5%BF%97%E4%BB%8E%E5%93%AA%E9%87%8C%E6%89%BE%E5%88%B0%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">反馈问题时，开发者需要的日志从哪里找到？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E5%BC%80%E5%90%AF%E5%A4%9A%E4%B8%AA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%90%97%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">支持开启多个代理服务吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-32%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E8%83%BD%E4%BD%BF%E7%94%A8%E5%90%97%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">在 32位操作系统下能使用吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-Windows-7-Win7-%E4%B8%8B%E8%83%BD%E4%BD%BF%E7%94%A8%E5%90%97%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">在 Windows 7 &#x2F; Win7 下能使用吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-Windows-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%E4%B8%AD%E5%8F%AA%E6%9C%89HTTP%E4%BB%A3%E7%90%86%E8%80%8C%E6%B2%A1%E6%9C%89SOCKS%E4%BB%A3%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">为什么 Windows 自动配置系统代理模式下系统代理中只有HTTP代理而没有SOCKS代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-macOS-%E7%B3%BB%E7%BB%9F%E4%B8%8A%E8%BF%90%E8%A1%8C%EF%BC%8C%E5%BC%80%E5%90%AF%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%EF%BC%8C%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE%E5%86%85%E7%9A%84%E4%BB%A3%E7%90%86%E5%9C%B0%E5%9D%80"><span class="toc-number">1.6.</span> <span class="toc-text">在 macOS 系统上运行，开启自动配置系统代理，无法自动添加网络设置内的代理地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E7%BF%BB%E5%A2%99%E5%90%8E%E8%83%BD%E5%90%A6%E5%85%B1%E4%BA%AB%E7%83%AD%E7%82%B9%E7%BB%99%E5%85%B6%E4%BB%96%E8%AE%BE%E5%A4%87"><span class="toc-number">1.7.</span> <span class="toc-text">电脑翻墙后能否共享热点给其他设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0%E8%AE%A9steam%E4%B8%8B%E8%BD%BD%E8%B5%B0%E7%9B%B4%E8%BF%9E"><span class="toc-number">1.8.</span> <span class="toc-text">怎么手动添加让steam下载走直连</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8v2rayN%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%93%E4%BC%9A%E4%BE%9B%E5%8F%82%E8%80%83%E5%92%8C%E5%88%A9%E7%94%A8debug%E6%97%A5%E5%BF%97%E8%87%AA%E6%9F%A5%E8%87%AA%E7%BA%A0"><span class="toc-number">1.9.</span> <span class="toc-text">使用v2rayN的一些体会供参考和利用debug日志自查自纠</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PAC-%E6%A8%A1%E5%BC%8F%E5%92%8C%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.10.</span> <span class="toc-text">PAC 模式和自动配置系统代理有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9DNS%E9%85%8D%E7%BD%AE%E7%9A%84%E5%A2%9E%E5%BC%BA%E7%9A%84%E8%AE%A8%E8%AE%BA"><span class="toc-number">1.11.</span> <span class="toc-text">对DNS配置的增强的讨论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%9C%A8%E5%BC%80%E5%90%AFv2ray%E4%B9%8B%E5%90%8E%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8bing%E6%90%9C%E7%B4%A2"><span class="toc-number">1.12.</span> <span class="toc-text">为什么我在开启v2ray之后无法使用bing搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E2%80%9C%E8%A7%A3%E9%99%A4win10-UWP%E5%BA%94%E7%94%A8%E5%9B%9E%E7%8E%AF%E4%BB%A3%E7%90%86%E9%99%90%E5%88%B6%E2%80%9D%E5%87%BA%E9%94%99"><span class="toc-number">1.13.</span> <span class="toc-text">点击“解除win10 UWP应用回环代理限制”出错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%9B%B4%E6%96%B0-Windows-WIN11-24H2-%E5%90%8E%E4%BB%A3%E7%90%86%E5%A4%B1%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="toc-number">1.14.</span> <span class="toc-text">关于更新 Windows WIN11 24H2 后代理失效的问题解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8TUN%E6%A8%A1%E5%BC%8F%E9%97%AE%E9%A2%98%E7%9A%84%E7%BB%9F%E4%B8%80%E5%9B%9E%E5%A4%8D"><span class="toc-number">1.15.</span> <span class="toc-text">启用TUN模式问题的统一回复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E6%B5%8B%E8%AF%95%E7%9C%9F%E8%BF%9E%E6%8E%A5%E6%97%B6%E4%BC%9A%E6%98%BE%E7%A4%BA%E8%BF%90%E8%A1%8C-core-%E5%A4%B1%E8%B4%A5"><span class="toc-number">1.16.</span> <span class="toc-text">在测试真连接时会显示运行 core 失败</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E4%BB%A3%E7%90%86%E6%B8%B8%E6%88%8F-%E6%88%96-%E5%8A%A0%E9%80%9F%E6%B8%B8%E6%88%8F%E5%90%97%EF%BC%9F"><span class="toc-number">1.17.</span> <span class="toc-text">能代理游戏 或 加速游戏吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%98%E7%9B%98%E5%8C%BA%E6%98%BE%E7%A4%BA%E7%9A%84%E5%9B%BE%E6%A0%87%E8%83%BD%E8%87%AA%E5%B7%B1%E6%94%B9%E5%90%97%EF%BC%9F"><span class="toc-number">1.18.</span> <span class="toc-text">托盘区显示的图标能自己改吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E4%B8%8D%E5%85%B3%E9%97%AD%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E7%9B%B4%E6%8E%A5%E5%85%B3%E6%9C%BA%EF%BC%8C%E9%87%8D%E5%90%AF%E7%B3%BB%E7%BB%9F%E5%90%8E%E5%9C%A8%E4%B8%8D%E8%BF%90%E8%A1%8C-v2rayN-%E6%97%B6%EF%BC%8C%E7%B3%BB%E7%BB%9F%E4%BB%A3%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%E7%8A%B6%E6%80%81%EF%BC%9F"><span class="toc-number">1.19.</span> <span class="toc-text">在不关闭系统代理的情况下直接关机，重启系统后在不运行 v2rayN 时，系统代理是什么状态？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%A4%B9%E6%88%96%E8%B7%AF%E5%BE%84%E4%B8%AD%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E5%92%8C%E7%A9%BA%E6%A0%BC%E7%AD%89%E5%90%97%EF%BC%9F"><span class="toc-number">1.20.</span> <span class="toc-text">文件夹或路径中是否可以使用中文和空格等吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80360-%E7%81%AB%E7%BB%92%E7%AD%89%E6%9D%80%E6%AF%92%E8%BD%AF%E4%BB%B6%E5%90%8E%EF%BC%8Cv2rayN%E4%B8%8D%E8%83%BD%E4%BB%A3%E7%90%86%E6%88%91%E7%9A%84%E6%B5%81%E9%87%8F%EF%BC%8C%E5%AF%BC%E8%87%B4%E6%88%91%E4%B8%8D%E8%83%BD%E7%BF%BB%E5%A2%99%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-number">1.21.</span> <span class="toc-text">打开360 火绒等杀毒软件后，v2rayN不能代理我的流量，导致我不能翻墙怎么办？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9C%81%E6%97%B6%E7%9C%81%E5%8A%9B"><span class="toc-number">1.21.1.</span> <span class="toc-text">省时省力:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%B8%8D%E5%AB%8C%E9%BA%BB%E7%83%A6%E7%9A%84%E8%AF%9D%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%87%87%E5%8F%96%E4%B8%80%E4%B8%8B%E6%8E%AA%E6%96%BD%EF%BC%9A"><span class="toc-number">1.21.2.</span> <span class="toc-text">如果不嫌麻烦的话，可以采取一下措施：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%B7%BB%E5%8A%A0v2rayN%E5%88%B0%E6%9D%80%E6%AF%92%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%99%BD%E5%90%8D%E5%8D%95"><span class="toc-number">1.21.2.1.</span> <span class="toc-text">1. 添加v2rayN到杀毒软件的白名单</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E7%A6%81%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99%E6%88%96%E7%9B%B8%E5%85%B3%E7%BD%91%E7%BB%9C%E7%9B%91%E6%8E%A7%E5%8A%9F%E8%83%BD"><span class="toc-number">1.21.2.2.</span> <span class="toc-text">2. 禁用防火墙或相关网络监控功能</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9v2rayN%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.21.2.3.</span> <span class="toc-text">3. 修改v2rayN代理设置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E5%85%B3%E9%97%AD%E6%9D%80%E6%AF%92%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%AE%9E%E6%97%B6%E4%BF%9D%E6%8A%A4"><span class="toc-number">1.21.2.4.</span> <span class="toc-text">4. 关闭杀毒软件的实时保护</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E9%87%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.21.2.5.</span> <span class="toc-text">5. 重置网络设置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8VPN%E6%88%96%E5%85%B6%E4%BB%96%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7"><span class="toc-number">1.21.2.6.</span> <span class="toc-text">6. 尝试使用VPN或其他代理工具</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-%E5%8D%B8%E8%BD%BD%E6%88%96%E6%9A%82%E6%97%B6%E7%A6%81%E7%94%A8%E6%9D%80%E6%AF%92%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.21.2.7.</span> <span class="toc-text">7. 卸载或暂时禁用杀毒软件</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/10/v2rayN%E7%9B%B8%E5%85%B3%E7%9A%84Q&amp;A/" title="v2rayN相关的常见问题和答案">v2rayN相关的常见问题和答案</a><time datetime="2025-04-10T06:11:12.000Z" title="发表于 2025-04-10 14:11:12">2025-04-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/09/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/" title="如何配置和使用代理？">如何配置和使用代理？</a><time datetime="2025-04-09T13:23:12.000Z" title="发表于 2025-04-09 21:23:12">2025-04-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/25/%E7%94%B5%E8%87%AA%E6%80%9D%E7%A7%91%E8%80%83%E8%AF%95/" title="电自思科考试">电自思科考试</a><time datetime="2024-12-25T13:23:12.000Z" title="发表于 2024-12-25 21:23:12">2024-12-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/01/%E6%9C%AC%E5%9C%B0yum%E6%BA%90/" title="本地yum源">本地yum源</a><time datetime="2024-11-01T13:23:12.000Z" title="发表于 2024-11-01 21:23:12">2024-11-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/31/test-post/" title="test post">test post</a><time datetime="2024-10-31T04:59:18.000Z" title="发表于 2024-10-31 12:59:18">2024-10-31</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Netlostkid</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
